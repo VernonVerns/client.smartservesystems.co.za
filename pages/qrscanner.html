@@ -1,0 +1,90 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>QR Scanner - SmartServe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta name="theme-color" content="#336699" />
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+  	<link rel="stylesheet" type="text/css" href="../css/themify-icons.css">
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<script src="../js/jsQR.js"></script>
+</head>
+<body>
+	<div id="qr_scanner_page">
+		<div class="content">
+			<h1>SmartServe Scanner</h1>
+
+			<div id="loadingMessage">
+				🎥 Unable to access video stream (please make sure you have the camera enabled)
+			</div>
+			<canvas id="canvas" hidden></canvas>
+			<div id="output" hidden>
+				<div id="outputMessage">No QR code detected.</div>
+				<div hidden><b>Data:</b> <span id="outputData"></span></div>
+			</div>
+		</div>
+	</div>
+
+  	<script>
+		var video = document.createElement("video");
+		var canvasElement = document.getElementById("canvas");
+		var canvas = canvasElement.getContext("2d");
+		var loadingMessage = document.getElementById("loadingMessage");
+		var outputContainer = document.getElementById("output");
+		var outputMessage = document.getElementById("outputMessage");
+		var outputData = document.getElementById("outputData");
+
+		function drawLine(begin, end, color) {
+		canvas.beginPath();
+		canvas.moveTo(begin.x, begin.y);
+		canvas.lineTo(end.x, end.y);
+		canvas.lineWidth = 4;
+		canvas.strokeStyle = color;
+		canvas.stroke();
+		}
+
+		// Use facingMode: environment to attemt to get the front camera on phones
+		navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
+		video.srcObject = stream;
+		video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+		video.play();
+		requestAnimationFrame(tick);
+		});
+
+		function tick() {
+		loadingMessage.innerText = "⌛ Loading video..."
+		if (video.readyState === video.HAVE_ENOUGH_DATA) {
+			loadingMessage.hidden = true;
+			canvasElement.hidden = false;
+			outputContainer.hidden = false;
+
+			canvasElement.height = video.videoHeight;
+			canvasElement.width = video.videoWidth;
+			canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+			var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+			var code = jsQR(imageData.data, imageData.width, imageData.height, {
+			inversionAttempts: "dontInvert",
+			});
+			if (code) {
+			drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+			drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+			drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+			drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+			outputMessage.hidden = true;
+			outputData.parentElement.hidden = false;
+			outputData.innerText = code.data;
+			window.location.href = code.data;
+			} else {
+			outputMessage.hidden = false;
+			outputData.parentElement.hidden = true;
+			}
+		}
+		requestAnimationFrame(tick);
+		}
+  	</script>
+</body>
+</html>

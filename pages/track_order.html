@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Track Your Order</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  	<meta name="theme-color" content="#336699" />
+  	<link rel="stylesheet" type="text/css" href="../css/main.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+  	<link rel="stylesheet" type="text/css" href="../css/themify-icons.css">
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<!-- ***************************************************************************************************
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+											NAVIGATION BAR
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+	*************************************************************************************************** -->
+	<nav class="navigation w3-card" id="ss_client_nav">
+		<ul class="navigation-nav">
+			<li>
+				<a>
+					<img src="../img/logo.jpg" style="width: 80px">
+				</a>
+			</li>
+		</ul>
+
+		<ul class="right-navigation">
+			<li>
+				<a onclick="openNav()"><i class="ti-menu"></i></a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="ss_clien_sidebar" class="side-nav">
+		<div class="w3-center mb-4">
+			<img src="../img/logo_white.png" style="width: 140px">
+		</div>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="./menu.html">Menu</a>
+		<a href="./track_order.html">Track Order</a>
+		<a href="./history.html">History</a>
+		<a href="./reviewRestaurant.html">Review Restaurant</a>
+	</div>
+
+	<section id="track_order">
+		<div class="container">
+			<div class="content">
+				<div class="order shadow-sm">
+					<div class="header">
+						<h2>
+							Order #<span id="order_number">653</span> 
+							<small class="time-count w3-right">
+								<label id="counter"></label>
+							</small>
+						</h2>
+					</div>
+
+					<ul class="list-unstyled order-item-list" id="track_order_items">
+						<!-- Order items are listed here -->
+					</ul>
+
+					<div class="order-footer">
+						<h3>Total <span class="w3-right" id="track_order_total">R0.00</span></h3>
+					</div>
+
+					<span class="current-status" data-toggle="tooltip" data-placement="left" title="Your Order is recived"></span>
+				</div>
+				<div class="add-items w3-center mt-4">
+					<a href="./menu.html">Add items</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/moments.js"></script>
+  	<script type="text/javascript" src="../js/main.js"></script>
+  	<script type="text/javascript" src="../js/wow.min.js"></script>
+  	<script type="text/javascript">
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();   
+		});
+  	</script>
+</body>
+</html>

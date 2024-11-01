@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kitchen Screen - SmartServe</title>
+	<meta charset="utf-8">
+  	<meta name="theme-color" content="#336699" />
+  	<link rel="stylesheet" type="text/css" href="../css/main.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+  	<link rel="stylesheet" type="text/css" href="../css/themify-icons.css">
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<nav id="kitchen_nav">
+		<div>
+			<h3 class="navbar-brand">SmartServe</h3>
+		</div>
+
+		<ul class="ml-auto d-flex list-unstyled status-btns">
+			<li><button type="button" class="shadow-sm active-status-selector" id="view_all_orders">All</button></li>
+			<li><button type="button" class="shadow-sm" id="view_unprepared">Unprepared</button></li>
+			<li><button type="button" class="shadow-sm" id="view_preparing">Preparing</button></li>
+		</ul>
+
+		<div class="other-pages-btns">
+			<button type="button" class="btn"><i class="fa fa-history"></i></button>
+		</div>
+	</nav>
+	
+	<div id="kitchen_orders">
+		<div class="order">
+			<div class="w3-card">
+				<div class="order-header">
+					<span class="table-number">T-1</span>
+					<div class="ml-auto text-right" style="line-height: 15px;">
+						<span class="order-number">#3920</span>
+						<small class="waiter-name">Simamkele</small>
+					</div>
+				</div>
+				<div class="order-items">
+					<div class="item">
+						<div class="name-and-qty">
+							<span>2</span>&nbsp;&times;&nbsp;
+							<span>Simonising Kaapse Vonkel Demi Sec</span>
+						</div>
+						<div class="serving-options">
+							<div class="with">
+								<small>With:</small>
+								<span>Mash</span>
+							</div>
+							<div class="sause">
+								<small>Sause:</small>
+								<span>Chilli Sause</span>
+							</div>
+						</div>
+						<div class="item-message">
+							<p>Please add sugar and ice... Plus lemon on the other one</p>
+						</div>
+						<div class="item-control">
+							<div>
+								<span><i class="fa fa-clock-o"></i></span>&nbsp;
+								<span class="time">0:12</span> -
+								<span class="time-status">Received</span>
+							</div>
+							<div class="ml-auto">
+								<button type="button" class="status-1">Preparing</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="item status-1">
+						<div class="name-and-qty">
+							<span>2</span>&nbsp;&times;&nbsp;
+							<span>Simonising Kaapse Vonkel Demi Sec</span>
+						</div>
+						<div class="serving-options">
+							<div class="with">
+								<small>With:</small>
+								<span>Mash</span>
+							</div>
+							<div class="sause">
+								<small>Sause:</small>
+								<span>Chilli Sause</span>
+							</div>
+						</div>
+						<div class="item-message">
+							<p>Please add sugar and ice... Plus lemon on the other one</p>
+						</div>
+						<div class="item-control">
+							<div>
+								<span><i class="fa fa-clock-o"></i></span>&nbsp;
+								<span class="time">5:19</span> -
+								<span class="time-status">Preparing</span>
+							</div>
+							<div class="ml-auto">
+								<button type="button" class="status-2">Ready</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="name-and-qty">
+							<span>2</span>&nbsp;&times;&nbsp;
+							<span>Simonising Kaapse Vonkel Demi Sec</span>
+						</div>
+						<div class="serving-options">
+							<div class="with">
+								<small>With:</small>
+								<span>Mash</span>
+							</div>
+							<div class="sause">
+								<small>Sause:</small>
+								<span>Chilli Sause</span>
+							</div>
+						</div>
+						<div class="item-message">
+							<p>Please add sugar and ice... Plus lemon on the other one</p>
+						</div>
+						<div class="item-control">
+							<div>
+								<span><i class="fa fa-clock-o"></i></span>&nbsp;
+								<span class="time">1:42</span> -
+								<span class="time-status">Received</span>
+							</div>
+							<div class="ml-auto">
+								<button type="button" class="status-1">Preparing</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="order-footer">
+					<div>
+						<span class="new-items">2</span> - 
+						<span>Unprepared</span>
+					</div>
+					&nbsp;
+					<div class="ml-auto">
+						<span class="new-items">1</span> - 
+						<span>Preparing</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="order">
+			<div class="w3-card">
+				<div class="order-header">
+					<span class="table-number">T-7</span>
+					<div class="ml-auto text-right" style="line-height: 15px;">
+						<span class="order-number">#3943</span>
+						<small class="waiter-name">Roskruge</small>
+					</div>
+				</div>
+				<div class="order-items">
+					<div class="item">
+						<div class="name-and-qty">
+							<span>2</span>&nbsp;&times;&nbsp;
+							<span>Simonising Kaapse Vonkel Demi Sec</span>
+						</div>
+						<div class="serving-options">
+							<div class="with">
+								<small>With:</small>
+								<span>Mash</span>
+							</div>
+							<div class="sause">
+								<small>Sause:</small>
+								<span>Chilli Sause</span>
+							</div>
+						</div>
+						<div class="item-message">
+							<p>Please add sugar and ice... Plus lemon on the other one</p>
+						</div>
+						<div class="item-control">
+							<div>
+								<span><i class="fa fa-clock-o"></i></span>&nbsp;
+								<span class="time">0:58</span> -
+								<span class="time-status">Received</span>
+							</div>
+							<div class="ml-auto">
+								<button type="button" class="status-1">Preparing</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="order-footer">
+					<div>
+						<span class="new-items">1</span> - 
+						<span>Unprepared</span>
+					</div>
+					&nbsp;
+					<div class="ml-auto">
+						<span class="new-items">0</span> - 
+						<span>Preparing</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript">
+  		$('#view_all_orders').on('click', function(){
+  			$('#view_all_orders').addClass('active-status-selector');
+  			$('#view_unprepared').removeClass('active-status-selector');
+  			$('#view_preparing').removeClass('active-status-selector');
+  		});
+
+  		$('#view_unprepared').on('click', function(){
+  			$('#view_all_orders').removeClass('active-status-selector');
+  			$('#view_unprepared').addClass('active-status-selector');
+  			$('#view_preparing').removeClass('active-status-selector');
+  		});
+
+  		$('#view_preparing').on('click', function(){
+  			$('#view_all_orders').removeClass('active-status-selector');
+  			$('#view_unprepared').removeClass('active-status-selector');
+  			$('#view_preparing').addClass('active-status-selector');
+  		});
+  	</script>
+</body>
+</html>

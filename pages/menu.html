@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Menu</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  	<meta name="theme-color" content="#336699" />
+  	<link rel="stylesheet" type="text/css" href="../css/main.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+  	<link rel="stylesheet" type="text/css" href="../css/themify-icons.css">
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<!-- ***************************************************************************************************
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+											NAVIGATION BAR
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+	*************************************************************************************************** -->
+	<nav class="navigation w3-card" id="ss_client_nav">
+		<ul class="navigation-nav">
+			<li>
+				<a>
+					<img src="../img/LapiazzaLogo.jpg" style="width: 100px">
+				</a>
+			</li>
+		</ul>
+
+
+		<ul class="right-navigation align-item-center">
+			<li><p style="font-size: 16px; margin-top: 5px;">Table: <span id="table_number_menu"></span></p></li>
+			<li>
+				<a class="cart-icon" id="viewCart">
+					<i class="ti-shopping-cart"></i>
+					<span class="notify"></span>
+				</a>
+			</li>
+			<li>
+				<a onclick="openNav()"><i class="ti-menu"></i></a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="ss_clien_sidebar" class="side-nav">
+		<div class="w3-center mb-4">
+			<img src="../img/logo_white.png" style="width: 140px">
+		</div>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="./menu.html">Menu</a>
+		<a href="./track_order.html">Track Order</a>
+		<a href="./history.html">History</a>
+		<a href="./reviewRestaurant.html">Review Restaurant</a>
+	</div>
+
+	<!-- ***************************************************************************************************
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+												MAIN MENU
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+	*************************************************************************************************** -->
+	<section id="main-menu">
+		<div class="content" id="menu_categories">
+			<!-- Categories are loaded here -->
+		</div>
+
+		<!-- 00000000000000000000000000000000000000000000000000000000000000000000000000
+									SPECIFY ITEM MODAL
+		00000000000000000000000000000000000000000000000000000000000000000000000000 -->
+		<div class="item-detail-modal">
+			<div id="specify_meal" class="modal wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="modal-content wow fadeInUp">
+                    <div class="header-description">
+                    	<div class="header-overlay">
+                    		<span id="closeSpecifyMeal" class="close">&times;</span>
+							<h2>Specify Your Meal</h2>
+						</div>
+                    </div>
+                    <div class="middle-description scroll">
+                    	<div class="item-full-details mb-3">
+                    		<h3>Item Name<span>R0.00</span></h3>
+                    		<p></p>
+                    	</div>
+                    	<div class="item-options" >
+                    		<div class="option">
+                    			<h4>Serve With:</h4>
+                    			<div class="radio-buttons ml-4" id="sides_radio">
+                    				<!-- Sides -->
+                    			</div>
+                    		</div>
+
+                    		<div class="option">
+                    			<h4>Extras</h4>
+                    			<div class="radio-buttons ml-4" id="extras_div">
+                    				
+                    			</div>
+                    		</div>
+                    	</div>
+                    	<div class="message-to-chef">
+                    		<textarea id="chef_message" placeholder="Message to Chef"></textarea>
+                    	</div>
+                    </div>
+                    <div class="footer">
+                    	<div class="qty-btn w3-left">
+                    		<div class="form-group">
+								<div class="item-qty">
+									<div class="value-button" id="decrease" value="Decrease Value">-</div>
+									<input type="number" name="quantity" id="number" value="1" />
+									<div class="value-button" id="increase" value="Increase Value">+</div>
+								</div>
+							</div>
+                    	</div>
+                    	<div class="add-to-cart">
+                    		<button type="button" id="add_item">Add to Cart</button>
+                    		<button type="button" id="update_specfication">Update</button>
+                    	</div>
+                    	<div class="total-price">
+                    		<span>R0.00</span>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<!-- 00000000000000000000000000000000000000000000000000000000000000000000000000
+									REQUEST MODAL
+		00000000000000000000000000000000000000000000000000000000000000000000000000 -->
+		<div class="request-btn">
+			<button type="button" class="btn request-main" id="request_btn">
+	            <img src="../img/request.png" alt="Request hand">
+	        </button>
+		</div>
+
+		<div class="request-modal-container">
+			<div id="request_modal" class="modal wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="modal-content wow fadeInUp">
+                    <div class="header-description">
+                    	<div class="header-overlay">
+                    		<span id="closeRequest" class="close">&times;</span>
+							<h2>What would you like to request?</h2>
+						</div>
+                    </div>
+                    <div class="middle-description scroll">
+                    	<div class="select-request">
+							<div class="inputGroup">
+								<input id="request_bill" name="option1" type="checkbox" value="Bill" />
+								<label for="request_bill">Bill</label>
+							</div>
+
+							<div class="inputGroup">
+								<input id="request_serviets" name="option2" type="checkbox" value="Serviets" />
+								<label for="request_serviets">Serviets</label>
+							</div>
+
+							<div class="inputGroup">
+								<input id="request_water" name="option2" type="checkbox" value="Water" />
+								<label for="request_water">Water</label>
+							</div>
+
+							<div class="inputGroup">
+								<input id="request_toothpick" name="option2" type="checkbox" value="Toothpicks" />
+								<label for="request_toothpick">Toothpicks</label>
+							</div>
+
+							<div class="inputGroup">
+								<input id="request_waiter" name="option2" type="checkbox" value="Waiter" />
+								<label for="request_waiter">Waiter</label>
+							</div>
+                    	</div>
+
+                    	<div class="message-to-waiter">
+                    		<textarea id="waiter_message" placeholder="Message to Waiter"></textarea>
+                    	</div>
+                    </div>
+                    <div class="footer w3-center">
+                    	<button type="button" id="send_request">Send Request</button>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<!-- 00000000000000000000000000000000000000000000000000000000000000000000000000
+										CART MODAL
+		000000000000000000000000000000000000000000000000000000000000000000000000000 -->
+		<div class="cart-container">
+			<div id="cart_modal" class="modal wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="modal-content wow fadeInUp">
+                    <div class="modal-title shadow-sm">
+                		<span id="closeCart" class="close">&times;</span>
+						<h2>Smart Cart</h2>
+                    </div>
+                    <div class="added-items scroll">
+                    	<ul class="cart-item-list list-unstyled">
+                    		<!-- Cart items are loaded here -->
+                    	</ul>
+
+                    	<div class="total-price-container">
+                    		<div class="w3-row">
+                    			<div class="w3-col" style="width: 60%">
+                    				<h2>Total Price:</h2>
+                    			</div>
+                    			<div class="w3-col" style="width: 30%">
+                    				<h2 id="cart_total">R0.00</h2>
+                    			</div>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="footer w3-center">
+                    	<button type="button" id="place_order">Place Order</button>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/wow.min.js"></script>
+  	<script type="text/javascript" src="../js/underscore.js"></script>
+  	<script type="text/javascript" src="../js/json2.js"></script>
+  	<script type="text/javascript" src="../js/jquery-1.7.js"></script>
+  	<script type="text/javascript" src="../js/underscore-observe.js"></script>
+  	<script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>

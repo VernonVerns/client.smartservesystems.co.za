@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review LaPiazza</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  	<meta name="theme-color" content="#336699" />
+  	<link rel="stylesheet" type="text/css" href="../css/main.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+  	<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+  	<link rel="stylesheet" type="text/css" href="../css/themify-icons.css">
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<!-- ***************************************************************************************************
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+											NAVIGATION BAR
+				00000000000000000000000000000000000000000000000000000000000000000000000000
+	*************************************************************************************************** -->
+	<nav class="navigation w3-card" id="ss_client_nav">
+		<ul class="navigation-nav">
+			<li>
+				<a>
+					<img src="../img/logo.jpg" style="width: 80px">
+				</a>
+			</li>
+		</ul>
+
+		<ul class="right-navigation">
+			<li>
+				<a onclick="openNav()"><i class="ti-menu"></i></a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="ss_clien_sidebar" class="side-nav">
+		<div class="w3-center mb-4">
+			<img src="../img/logo_white.png" style="width: 140px">
+		</div>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="./menu.html">Menu</a>
+		<a href="./track_order.html">Track Order</a>
+		<a href="./history.html">History</a>
+		<a href="./reviewRestaurant.html">Review Restaurant</a>
+	</div>
+
+	<section id="review_restaurant">
+		<div class="container">
+			<div class="content">
+				<div class="review-form">
+					<div class="form-group">
+						<input id="review_name" type="text" class="form-control" placeholder="Full name (e.g. John Doe)"/>
+					</div>
+					<div class="form-group">
+						<input id="review_email" type="email" class="form-control" placeholder="Email"/>
+					</div>
+					<div class="question">
+						<h3>How would you rate the taste of your meal?</h3>
+						<fieldset class="rating">
+							<input type="radio" id="star5" name="rating1" class="select-star" value="5"/>
+							<label class = "full" for="star5" title="Awesome - 5 stars"></label>
+
+							<input type="radio" id="star4half" class="select-star" name="rating1" value="4.5" />
+							<label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+
+							<input type="radio" id="star4" class="select-star" name="rating1" value="4"/>
+							<label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+
+							<input type="radio" id="star3half" class="select-star" name="rating1" value="3.5" />
+							<label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+
+							<input type="radio" id="star3" class="select-star" name="rating1" value="3" />
+							<label class = "full" for="star3" title="Meh - 3 stars"></label>
+
+							<input type="radio" id="star2half" name="rating1" value="2.5" />
+							<label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+
+							<input type="radio" id="star2" class="select-star" name="rating1" value="2" />
+							<label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+
+							<input type="radio" id="star1half" class="select-star" name="rating1" value="1.5" />
+							<label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+
+							<input type="radio" id="star1" class="select-star" name="rating1" value="1" />
+							<label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+
+							<input type="radio" id="starhalf" class="select-star" name="rating1" value="0.5" />
+							<label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+						</fieldset>
+					</div>
+
+					<div class="question">
+						<h3>How was the temperature of the food?</h3>
+						<fieldset class="rating">
+							<input type="radio" id="star52" class="select-star" name="rating2" value="5"/>
+							<label class = "full" for="star52" title="Awesome - 5 stars"></label>
+
+							<input type="radio" id="star4half2" class="select-star" name="rating2" value="4.5" />
+							<label class="half" for="star4half2" title="Pretty good - 4.5 stars"></label>
+
+							<input type="radio" id="star42" class="select-star" name="rating2" value="4"/>
+							<label class = "full" for="star42" title="Pretty good - 4 stars"></label>
+
+							<input type="radio" id="star3half2" class="select-star" name="rating2" value="3.5" />
+							<label class="half" for="star3half2" title="Meh - 3.5 stars"></label>
+
+							<input type="radio" id="star32" class="select-star" name="rating2" value="3" />
+							<label class = "full" for="star32" title="Meh - 3 stars"></label>
+
+							<input type="radio" id="star2half2" class="select-star" name="rating2" value="2.5" />
+							<label class="half" for="star2half2" title="Kinda bad - 2.5 stars"></label>
+
+							<input type="radio" id="star22" class="select-star" name="rating2" value="2" />
+							<label class = "full" for="star22" title="Kinda bad - 2 stars"></label>
+
+							<input type="radio" id="star1half2" class="select-star" name="rating2" value="1.5" />
+							<label class="half" for="star1half2" title="Meh - 1.5 stars"></label>
+ 
+							<input type="radio" id="star12" class="select-star" name="rating2" value="1" />
+							<label class = "full" for="star12" title="Sucks big time - 1 star"></label>
+
+							<input type="radio" id="starhalf2" class="select-star" name="rating2" value="0.5" />
+							<label class="half" for="starhalf2" title="Sucks big time - 0.5 stars"></label>
+						</fieldset>
+					</div>
+
+					<div class="question">
+						<h3>How can you rate the cleaniness of the restaurant?</h3>
+						<fieldset class="rating">
+							<input type="radio" id="star53" class="select-star" name="rating3" value="5"/>
+							<label class = "full" for="star53" title="Awesome - 5 stars"></label>
+
+							<input type="radio" id="star4half3" class="select-star" name="rating3" value="4.5" />
+							<label class="half" for="star4half3" title="Pretty good - 4.5 stars"></label>
+
+							<input type="radio" id="star43" class="select-star" name="rating3" value="4"/>
+							<label class = "full" for="star43" title="Pretty good - 4 stars"></label>
+
+							<input type="radio" id="star3half3" class="select-star" name="rating3" value="3.5" />
+							<label class="half" for="star3half3" title="Meh - 3.5 stars"></label>
+
+							<input type="radio" id="star33" class="select-star" name="rating3" value="3" />
+							<label class = "full" for="star33" title="Meh - 3 stars"></label>
+
+							<input type="radio" id="star2half3" class="select-star" name="rating3" value="2.5" />
+							<label class="half" for="star2half3" title="Kinda bad - 2.5 stars"></label>
+
+							<input type="radio" id="star23" class="select-star" name="rating3" value="2" />
+							<label class = "full" for="star23" title="Kinda bad - 2 stars"></label>
+
+							<input type="radio" id="star1half3" class="select-star" name="rating3" value="1.5" />
+							<label class="half" for="star1half3" title="Meh - 1.5 stars"></label>
+
+							<input type="radio" id="star13" class="select-star" name="rating3" value="1" />
+							<label class = "full" for="star13" title="Sucks big time - 1 star"></label>
+
+							<input type="radio" id="starhalf3" class="select-star" name="rating" value="0.5" />
+							<label class="half" for="starhalf3" title="Sucks big time - 0.5 stars"></label>
+						</fieldset>
+					</div>
+
+					<div class="question">
+						<h3>What are the chance of you coming back?</h3>
+						<fieldset class="rating">
+							<input type="radio" id="star54" class="select-star" name="rating4" value="5"/>
+							<label class = "full" for="star54" title="Awesome - 5 stars"></label>
+
+							<input type="radio" id="star4half4" class="select-star" name="rating4" value="4.5" />
+							<label class="half" for="star4half4" title="Pretty good - 4.5 stars"></label>
+
+							<input type="radio" id="star44" class="select-star" name="rating4" value="4"/>
+							<label class = "full" for="star44" title="Pretty good - 4 stars"></label>
+
+							<input type="radio" id="star3half4" class="select-star" name="rating4" value="3.5" />
+							<label class="half" for="star3half4" title="Meh - 3.5 stars"></label>
+
+							<input type="radio" id="star34" class="select-star" name="rating4" value="3" />
+							<label class = "full" for="star34" title="Meh - 3 stars"></label>
+
+							<input type="radio" id="star2half4" class="select-star" name="rating4" value="2.5" />
+							<label class="half" for="star2half4" title="Kinda bad - 2.5 stars"></label>
+
+							<input type="radio" id="star24" class="select-star" name="rating4" value="2" />
+							<label class = "full" for="star24" title="Kinda bad - 2 stars"></label>
+
+							<input type="radio" id="star1half4" class="select-star" name="rating4" value="1.5" />
+							<label class="half" for="star1half4" title="Meh - 1.5 stars"></label>
+
+							<input type="radio" id="star14" class="select-star" name="rating4" value="1" />
+							<label class = "full" for="star14" title="Sucks big time - 1 star"></label>
+
+							<input type="radio" id="starhalf4" class="select-star" name="rating4" value="0.5" />
+							<label class="half" for="starhalf4" title="Sucks big time - 0.5 stars"></label>
+						</fieldset>
+					</div>
+
+					<textarea class="mt-3" name="experience" id="experience" placeholder="Describe your experience"></textarea>
+				</div>
+				<button type="button" class="submit-review w3-right mt-4 mb-4" id="submit_review">Submit</button>
+			</div>
+		</div>
+	</section>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/main.js"></script>
+  	<script type="text/javascript" src="../js/wow.min.js"></script>
+</body>
+</html>
